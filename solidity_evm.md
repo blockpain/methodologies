@@ -4,7 +4,12 @@
 
 ## Timeline and Workflow
 
+## Static Analysis, Dynamic Analysis/Fuzzing
+
+## Line by Line, Manual Review 
+
 ## EVM/Solidity Specific Vulnerabilities (Low Hanging Fruit)
+
 
 
 
