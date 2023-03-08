@@ -10,26 +10,26 @@ a) **ramp-up**: get good feeling for codebase, generate call graphs, look at hot
 
 b) **static analysis/dynamic analysis**: Use analysis tools such as Slither, Mythril, and Echidna on the codebase. This will help point out "low-hanging fruit", and give us hotspots to look at. These issues can also manifest into more serious issues depending on contract logic.
 
-c) **line-by-line manual review**: this is where the fun happens. Now that we are familiar with the protocol, have some hotspots to look at, its time to dig into the logic. This is where we find the highs/crits that cannot be easily found using open source tooling. 
+c) **line-by-line manual review**: This is the fun part. Now that we are familiar with the protocol and have some hotspots to look at, its time to dig into the logic. This is where we find the highs/crits that cannot be easily found using open source tooling. 
 
 d) **development of PoC to illustrate findings**: While vulnerabilites in the codebase are being discovered, it is important to communicate them to the development team. Instead of providing theoretical evidence, and a paragraph in Telegram, it is most effective to create a PoC exploit contract to illustrate the finding. 
 
-e) **re-review of code that was refactored due to audit findings**: after the audit is complete, it is important to ensure the refactoring does not introduce new vulnerabiities.
+e) **re-review of code that was refactored due to audit findings**: After the audit is complete, it is important to ensure the refactoring does not introduce new vulnerabiities.
 
 
 ## Timeline and Workflow
 
 **Ramp-Up:**
 
-The ramp-up period for an audit should be short, and aided by documentation and resources provided by the development team. This includes getting an idea for what the protocol is intended to do, generate additional docs such as call graphs to help the audit, and find hotspots to pay close attention to later. This phase typically lasts 1-2 days.
+The ramp-up period for an audit should be short, and aided by documentation and resources provided by the development team. This includes getting an idea for what the protocol is intended to do, generating additional docs such as call graphs to help the audit, and finding hotspots to pay close attention to later. This phase typically lasts 1-2 days.
 
 **Static and Dynamic Analysis:**
 
-It is advantageous to perform static analysis immediately after ramp up, and disqualifying results is the first instance of true manual review being done on the codebase. Running static analysis does not take long at all, but confirming the results may take a day or two. Static and dynamic analysis (such as slither, mythril, and echidna) are incredibly useful for finding easier-to-spot vulnerabilities. This expedites the auditing process, and more attention can be paid attention to logic based vulnerabilities. These methods are also fairly comprehensive on their own, and can provide good data to reason about code hygeine and quality. 
+It is advantageous to perform static analysis immediately after ramp up, and disqualifying results is the first instance of true manual review being done on the codebase. Running static analysis does not take long at all, but confirming the results may take a day or two. Static and dynamic analysis (such as slither, mythril, and echidna) are incredibly useful for finding easier-to-spot vulnerabilities. This expedites the auditing process, and more attention can be paid attention to logic based vulnerabilities. These methods are also fairly comprehensive on their own, and can provide good data to reason about code hygeine and quality. Good analysis tools can be very powerful. 
 
 **Line-by-Line, Manual Review:**
 
-This is **the good stuff**. While analyis tools can very often detect or point us in directions where existing code is insecure, manual review allows us to find the vulnerabilities which come from code **that should be there, but isn't**. These include things like missing authorization checks in permissioned functions, or missing intitialization of upgradable parent contracts. Manual review also allows us to find **logic based** vulnerabilities in a codebase. These are issues that arise specifically from the protocol design itself, and are often tagged with high and critical ratings. They lead to things like locked tokens, stolen funds, completely failing functionality, and so on, and so on. It is also during this part of a review where some of the "low-hanging fruit" can manifest into more serious vulnerabilities. This is why meticulous manual review of a codebase is necessary, and the most imporant part of any audit. It is often very useful to analyze a codebase from the perspective of call flow, in the way a user or admin would interact with the protocol, making a note of testing and creating PoC as necessary.
+This is **the fun stuff**. While analyis tools can very often detect or point us in directions where existing code is insecure, manual review allows us to find the vulnerabilities which come from code **that should be there, but isn't**. These include things like missing authorization checks in permissioned functions, or missing intitialization of upgradable parent contracts. Manual review also allows us to find **logic based** vulnerabilities in a codebase. These are issues that arise specifically from the protocol design itself, and are often tagged with high and critical ratings. They lead to things like locked tokens, stolen funds, completely failing functionality, and so on, and so on. It is also during this part of a review where some of the "low-hanging fruit" can manifest into more serious vulnerabilities. This is why meticulous manual review of a codebase is necessary, and the most imporant part of any audit. It is often very useful to analyze a codebase from the perspective of call flow, in the way a user or admin would interact with the protocol, making a note of testing and creating PoC as necessary.
 
 
 **Development of PoC**
