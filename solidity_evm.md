@@ -25,7 +25,7 @@ The ramp-up period for an audit should be short, and aided by documentation and 
 
 **Static and Dynamic Analysis:**
 
-It is advantageous to perform static analysis immediately after ramp up, and disqualifying results is the first instance of true manual review being done on the codebase. Running static analysis does not take long at all, but confirming the results may take a day or two. Static and dynamic analysis (such as slither, mythril, and echidna) are incredibly useful for finding easier-to-spot vulnerabilities. This expedites the auditing process, and more attention can be paid attention to logic based vulnerabilities. These methods are also fairly comprehensive on their own, and can provide good data to reason about code hygeine and quality. Good analysis tools can be very powerful. 
+It is advantageous to perform static analysis immediately after ramp up, and disqualifying results is the first instance of true manual review being done on the codebase. Running static analysis does not take long at all, but confirming the results may take a day or two. Static and dynamic analysis (such as slither, mythril, and echidna) are incredibly useful for finding easier-to-spot vulnerabilities. This expedites the auditing process, and more attention can be paid to logic based vulnerabilities. These methods are also fairly comprehensive on their own, and can provide good data to reason about code hygeine and quality. Good analysis tools can be very powerful. 
 
 **Line-by-Line, Manual Review:**
 
